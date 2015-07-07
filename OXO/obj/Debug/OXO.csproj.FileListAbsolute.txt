@@ -1,0 +1,7 @@
+C:\Dev\GitHub\OXO\OXO\OXO\bin\Debug\OXO.exe.config
+C:\Dev\GitHub\OXO\OXO\bin\Debug\OXO.exe.config
+C:\Dev\GitHub\OXO\OXO\bin\Debug\OXO.exe
+C:\Dev\GitHub\OXO\OXO\bin\Debug\OXO.pdb
+C:\Dev\GitHub\OXO\OXO\obj\Debug\OXO.csprojResolveAssemblyReference.cache
+C:\Dev\GitHub\OXO\OXO\obj\Debug\OXO.exe
+C:\Dev\GitHub\OXO\OXO\obj\Debug\OXO.pdb
