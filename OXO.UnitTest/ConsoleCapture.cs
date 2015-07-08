@@ -58,7 +58,8 @@ namespace GavinGreig.OXO.UnitTest
         /// </summary>
         public void Dispose()
         {
-            ////Console.SetOut(new StreamWriter(Console.OpenStandardError()));
+            // Might need the following line for proper tidy-up: to be determined.
+            // Console.SetOut(new StreamWriter(Console.OpenStandardError()));
             myWriter.Dispose();
         }
     }

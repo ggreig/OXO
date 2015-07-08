@@ -29,7 +29,7 @@ namespace GavinGreig.OXO.UnitTest
         /// Tests this instance.
         /// </summary>
         [Test]
-        public static void Test()
+        public static void GameIntroduction_DisplaysCorrectly()
         {
             using (ConsoleCapture theConsole = new ConsoleCapture())
             {
@@ -38,11 +38,9 @@ namespace GavinGreig.OXO.UnitTest
                     "***********************\r\n" + 
                     "* Noughts and Crosses *\r\n" +
                     "***********************\r\n";
-                GameMode theGameMode = new AutomaticPlay();
-                Game theGame = new Game(theGameMode);
 
                 // Act
-                theGame.Run();
+                Game.DisplayGameIntroduction();
 
                 // Assert
                 Assert.That(theConsole.Output, Is.EqualTo(theExpectedOutput));
