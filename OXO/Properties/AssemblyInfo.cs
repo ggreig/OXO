@@ -8,6 +8,7 @@
 // </summary>
 
 using System.Reflection;
+using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -43,3 +44,14 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: NeutralResourcesLanguageAttribute("en-GB")]
+
+// Make elements with the "internal" access modifier accessible to the specified
+// friend assembly. This is to allow unit testing, while keeping assembly security high.
+[assembly: InternalsVisibleTo(
+    "OXO.UnitTest, PublicKey=" +
+    "00240000048000009400000006020000002400005253413100040000010001003f5e37d168d89e" +
+    "660a591ce81837a3e5126b9a2ba58d92cfb8d9f61d343b0bbc606156f7154c9ce056ce1bf6467b" +
+    "0965caed1fc0af368abfd9cb1fb5d36e6faa9cf4ba7ec8bd954c3b54619eb239d54a0255151496" +
+    "04d197b9a1f4d1f22f307acc94fb4918234f9c9a5841946f0167df7fbd642385854c71c4b41272" +
+    "8a59b6c6")]

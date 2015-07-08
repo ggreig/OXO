@@ -7,6 +7,7 @@
 // Contains assembly level metadata.
 // </summary>
 
+using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -43,3 +44,8 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+// Recommended to mark the assembly as CLSCompliant because it exposes public members.
+// If any code within the assembly is not CLSCompliant, it can be marked as such locally
+// using "CLSCompliant(false)".
+[assembly: CLSCompliant(true)]

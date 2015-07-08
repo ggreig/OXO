@@ -15,6 +15,7 @@ namespace GavinGreig.OXO
     using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
+    using GavinGreig.OXO.Strategies;
 
     /// <summary>
     /// This class contains the static method Main, which is the entry point of the program.
@@ -40,10 +41,9 @@ namespace GavinGreig.OXO
             Justification = "'args' is a standard parameter for this method and shouldn't be removed even if unused.")]
         private static void Main(string[] args)
         {
-            ////Console.WriteLine("Hello World");
-            ////Thread.Sleep(1000);
-            ////Console.WriteLine("Goodbye Cruel World");
-            ////Thread.Sleep(1000);
+            GameMode theGameMode = new AutomaticPlay();
+            Game theGame = new Game(theGameMode);
+            theGame.Run();
         }
     }
 }

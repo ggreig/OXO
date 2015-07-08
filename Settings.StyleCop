@@ -63,7 +63,9 @@
         <CollectionProperty Name="Hungarian">
           <Value>a</Value>
           <Value>an</Value>
+          <Value>in</Value>
           <Value>io</Value>
+          <Value>my</Value>
           <Value>ux</Value>
         </CollectionProperty>
       </AnalyzerSettings>
