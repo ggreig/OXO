@@ -20,6 +20,10 @@ namespace GavinGreig.OXO.UnitTest
     /// <summary>
     /// A utility class that captures console output for testing purposes.
     /// </summary>
+    /// <remarks>
+    /// A modification of 
+    /// <a href="http://stackoverflow.com/questions/2139274/grabbing-the-output-sent-to-console-out-from-within-a-unit-test">a Stack Overflow solution</a>.
+    /// </remarks>
     internal class ConsoleCapture : IDisposable
     {
         /// <summary>

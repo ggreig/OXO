@@ -9,3 +9,4 @@ C:\Dev\GitHub\OXO\OXO\bin\Debug\OXO.exe.CodeAnalysisLog.xml
 C:\Dev\GitHub\OXO\OXO\bin\Debug\OXO.exe.lastcodeanalysissucceeded
 C:\Dev\GitHub\OXO\OXO\obj\Debug\OXO.exe
 C:\Dev\GitHub\OXO\OXO\obj\Debug\OXO.pdb
+C:\Dev\GitHub\OXO\OXO\obj\Debug\OXO.csprojResolveAssemblyReference.cache
