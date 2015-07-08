@@ -57,7 +57,7 @@ namespace GavinGreig.OXO.Display
         /// <summary>
         /// Renders the box to the console.
         /// </summary>
-        internal void Render()
+        internal void Display()
         {
             WriteAsteriskHorizontal();
             WriteLeftMargin();

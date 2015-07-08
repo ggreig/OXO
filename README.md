@@ -18,6 +18,10 @@ The Unit Test project also depends on packages that integrate NUnit
 functionality into Visual Studio. An external installation of NUnit
 should not be required.
 
+Otherwise, this solution should be self-contained, although
+unfortunately it has not been possible to test this on a machine
+with minimal development software installed.
+
 Impediments
 -----------
 * First time using GitHub

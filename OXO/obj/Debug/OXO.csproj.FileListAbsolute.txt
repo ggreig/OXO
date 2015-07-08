@@ -1,1 +1,11 @@
 C:\Dev\GitHub\OXO\OXO\OXO\bin\Debug\OXO.exe.config
+C:\Dev\GitHub\OXO\OXO\obj\Debug\GavinGreig.OXO.Resource.resources
+C:\Dev\GitHub\OXO\OXO\obj\Debug\OXO.csproj.GenerateResource.Cache
+C:\Dev\GitHub\OXO\OXO\bin\Debug\OXO.exe.config
+C:\Dev\GitHub\OXO\OXO\bin\Debug\OXO.XML
+C:\Dev\GitHub\OXO\OXO\bin\Debug\OXO.exe
+C:\Dev\GitHub\OXO\OXO\bin\Debug\OXO.pdb
+C:\Dev\GitHub\OXO\OXO\bin\Debug\OXO.exe.CodeAnalysisLog.xml
+C:\Dev\GitHub\OXO\OXO\bin\Debug\OXO.exe.lastcodeanalysissucceeded
+C:\Dev\GitHub\OXO\OXO\obj\Debug\OXO.exe
+C:\Dev\GitHub\OXO\OXO\obj\Debug\OXO.pdb

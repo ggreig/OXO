@@ -16,15 +16,12 @@ namespace GavinGreig.OXO
     using System.Threading;
     using System.Threading.Tasks;
     using GavinGreig.OXO.Display;
+    using GavinGreig.OXO.State;
     using GavinGreig.OXO.Strategies;
 
     /// <summary>
     /// A class representing the entire game.
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage(
-        "Microsoft.Performance", 
-        "CA1812:AvoidUninstantiatedInternalClasses",
-        Justification = "Temporary suppression during development - remove if found.")]
     internal class Game
     {
         /// <summary>
@@ -38,12 +35,18 @@ namespace GavinGreig.OXO
         private readonly GameMode myGameMode;
 
         /// <summary>
+        /// The current state of the game.
+        /// </summary>
+        private readonly GameState myGameState;
+
+        /// <summary>
         /// Initialises a new instance of the <see cref="Game"/> class.
         /// </summary>
         /// <param name="inGameMode">The mode selected for this game.</param>
         internal Game(GameMode inGameMode)
         {
             myGameMode = inGameMode;
+            myGameState = new GameState();
         }
 
         /// <summary>
@@ -59,7 +62,22 @@ namespace GavinGreig.OXO
         internal static void DisplayGameIntroduction()
         {
             CharacterBox theProgramBanner = new CharacterBox('*', Resource.ProgramBanner);
-            theProgramBanner.Render();
+            theProgramBanner.Display();
+            Console.WriteLine();
+            Console.WriteLine(Resource.GameIntroduction);
+            Console.WriteLine();
+        }
+
+        /// <summary>
+        /// Displays an introduction to the Game.
+        /// </summary>
+        /// <param name="inGameState">The state of the game that's to be displayed.</param>
+        internal static void DisplayGameBoard(GameState inGameState)
+        {
+            Console.WriteLine(Resource.GameBoardIntroduction);
+            Console.WriteLine();
+            inGameState.Display();
+            Console.WriteLine();
             Thread.Sleep(OneSecond);
         }
 
@@ -69,6 +87,7 @@ namespace GavinGreig.OXO
         internal void Run()
         {
             DisplayGameIntroduction();
+            DisplayGameBoard(myGameState);
             myGameMode.GetPlayer1();
             myGameMode.GetPlayer2();
         }

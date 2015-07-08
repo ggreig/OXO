@@ -61,6 +61,24 @@ namespace GavinGreig.OXO {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Here&apos;s the current state of the game board:.
+        /// </summary>
+        internal static string GameBoardIntroduction {
+            get {
+                return ResourceManager.GetString("GameBoardIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Two computer players will compete for your amusement..
+        /// </summary>
+        internal static string GameIntroduction {
+            get {
+                return ResourceManager.GetString("GameIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Noughts and Crosses.
         /// </summary>
         internal static string ProgramBanner {
