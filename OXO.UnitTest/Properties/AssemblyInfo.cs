@@ -14,12 +14,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OXO")]
-[assembly: AssemblyDescription("Noughts and Crosses, a.k.a. Tic Tac Toe - a game where the computer plays against itself.")]
+[assembly: AssemblyTitle("OXO.UnitTest")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Dr. Gavin T.D. Greig")]
-[assembly: AssemblyProduct("OXO")]
-[assembly: AssemblyCopyright("Copyright © Dr. Gavin T.D. Greig 2015")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("OXO.UnitTest")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fe186e51-0627-4920-929a-92b05921d950")]
+[assembly: Guid("ab3840c9-3694-4caf-96b4-9083a90eb81a")]
 
 // Version information for an assembly consists of the following four values:
 //
