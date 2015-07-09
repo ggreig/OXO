@@ -84,7 +84,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="State\Cell.cs" />
+    <Compile Include="State\CellState.cs" />
     <Compile Include="State\GameState.cs" />
+    <Compile Include="State\Path.cs" />
     <Compile Include="Strategies\AutomaticPlay.cs" />
     <Compile Include="Strategies\GameMode.cs" />
     <Compile Include="Validation\ArgumentTypeException.cs" />

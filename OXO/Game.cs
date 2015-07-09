@@ -72,11 +72,11 @@ namespace GavinGreig.OXO
         /// Displays an introduction to the Game.
         /// </summary>
         /// <param name="inGameState">The state of the game that's to be displayed.</param>
-        internal static void DisplayGameBoard(GameState inGameState)
+        internal void DisplayGameBoard()
         {
             Console.WriteLine(Resource.GameBoardIntroduction);
             Console.WriteLine();
-            inGameState.Display();
+            myGameState.Display();
             Console.WriteLine();
             Thread.Sleep(OneSecond);
         }
@@ -87,7 +87,7 @@ namespace GavinGreig.OXO
         internal void Run()
         {
             DisplayGameIntroduction();
-            DisplayGameBoard(myGameState);
+            DisplayGameBoard();
             myGameMode.GetPlayer1();
             myGameMode.GetPlayer2();
         }
