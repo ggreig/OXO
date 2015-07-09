@@ -15,7 +15,10 @@ namespace GavinGreig.OXO.State
     using System.Text;
     using System.Threading.Tasks;
 
-    internal class Path
+    /// <summary>
+    /// A class representing a possible winning path across the noughts and crosses grid.
+    /// </summary>
+    internal sealed class Path
     {
     }
 }

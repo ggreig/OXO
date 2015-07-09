@@ -22,7 +22,7 @@ namespace GavinGreig.OXO
     /// <summary>
     /// A class representing the entire game.
     /// </summary>
-    internal class Game
+    internal sealed class Game
     {
         /// <summary>
         /// One second in milliseconds.
@@ -71,7 +71,6 @@ namespace GavinGreig.OXO
         /// <summary>
         /// Displays an introduction to the Game.
         /// </summary>
-        /// <param name="inGameState">The state of the game that's to be displayed.</param>
         internal void DisplayGameBoard()
         {
             Console.WriteLine(Resource.GameBoardIntroduction);

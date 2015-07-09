@@ -1,10 +1,10 @@
-﻿// <copyright file="ProgramTest.cs" company="Gavin Greig">
+﻿// <copyright file="GameTest.cs" company="Gavin Greig">
 //      Copyright (c) Dr. Gavin T.D. Greig, 2015.
 // </copyright>
 // <author>Dr. Gavin T.D. Greig</author>
 // <date>2015-07-08</date>
 // <summary>
-// A class containing the entry point of the program.
+// A suite of unit tests for the Game class.
 // </summary>
 
 namespace GavinGreig.OXO.UnitTest
@@ -18,13 +18,14 @@ namespace GavinGreig.OXO.UnitTest
     using System.Threading.Tasks;
     using GavinGreig.OXO.State;
     using GavinGreig.OXO.Strategies;
+    using GavinGreig.OXO.UnitTest.Utility;
     using NUnit.Framework;
 
     /// <summary>
-    /// A suite of unit tests for the Program class.
+    /// A suite of unit tests for the Game class.
     /// </summary>
     [TestFixture]
-    public static class ProgramTest
+    public static class GameTest
     {
         /// <summary>
         /// Tests that the game introduction segment displays correctly.

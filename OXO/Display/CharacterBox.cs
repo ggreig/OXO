@@ -19,7 +19,7 @@ namespace GavinGreig.OXO.Display
     /// A class for drawing a box around a string, with the box being written
     /// using a specified character.
     /// </summary>
-    internal class CharacterBox
+    internal sealed class CharacterBox
     {
         /// <summary>
         /// A constant representing the space character. This exists for readability.

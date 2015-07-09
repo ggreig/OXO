@@ -74,9 +74,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleCapture.cs" />
+    <Compile Include="State\CellStateTest.cs" />
+    <Compile Include="Utility\ConsoleCapture.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="ProgramTest.cs" />
+    <Compile Include="GameTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

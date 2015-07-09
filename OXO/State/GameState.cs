@@ -18,14 +18,29 @@ namespace GavinGreig.OXO.State
     /// <summary>
     /// A class containing the state of the noughts and crosses game.
     /// </summary>
-    internal class GameState
+    internal sealed class GameState
     {
-        const int GridDimension = 3;
+        /// <summary>
+        /// The dimension, or size, of the square grid of <see cref="Cell"/>s.
+        /// </summary>
+        private const int GridDimension = 3;
+
+        /// <summary>
+        /// The square grid of 9 cells used in noughts and crosses.
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Microsoft.Performance", 
+            "CA1814:PreferJaggedArraysOverMultidimensional", 
+            MessageId = "Member",
+            Justification = "With fixed sizes, a jagged array would yield no benefit.")]
         private readonly Cell[,] myGrid = new Cell[GridDimension, GridDimension];
 
-        GameState()
+        /// <summary>
+        /// Initialises a new instance of the <see cref="GameState"/> class.
+        /// </summary>
+        internal GameState()
         {
-            ForAllCells((i, j) => myGrid[i, j] = new Cell());
+            ForAllCells(x => x = new Cell());
         }
 
         /// <summary>
@@ -36,18 +51,29 @@ namespace GavinGreig.OXO.State
         {
         }
 
+        /// <summary>
+        /// Resets the state of the game, so that another game can be played.
+        /// </summary>
         internal void Reset()
         {
-            ForAllCells((i, j) => myGrid[i, j].State = CellState.Empty);
+            ForAllCells(x => x.State = CellState.Empty);
         }
 
-        private void ForAllCells<T>(Func<int, int, T> inFunction)
+        /// <summary>
+        /// Applies an action to all the <see cref="Cell"/>s in the grid.
+        /// </summary>
+        /// <param name="inMethod">The action to apply to the cells.</param>
+        /// <remarks>
+        /// This method saves having to iterate through both dimensions
+        /// of the array in-line when an action has to be applied to all cells.
+        /// </remarks>
+        private void ForAllCells(Action<Cell> inMethod)
         {
             for (int i = 0; i < GridDimension; i++)
             {
                 for (int j = 0; j < GridDimension; j++)
                 {
-                    inFunction(i, j);
+                    inMethod(myGrid[i, j]);
                 }
             }
         }

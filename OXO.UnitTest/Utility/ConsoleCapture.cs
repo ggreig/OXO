@@ -7,7 +7,7 @@
 // A utility class that captures console output for testing purposes.
 // </summary>
 
-namespace GavinGreig.OXO.UnitTest
+namespace GavinGreig.OXO.UnitTest.Utility
 {
     using System;
     using System.Collections.Generic;

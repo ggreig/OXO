@@ -25,7 +25,7 @@ namespace GavinGreig.Validation
         "Microsoft.Usage", 
         "CA2237:MarkISerializableTypesWithSerializable",
         Justification = "Class copied from a PCL library; extension beyond scope of this exercise.")]
-    internal class ArgumentTypeException : System.ArgumentException
+    internal sealed class ArgumentTypeException : System.ArgumentException
     {
         /// <summary>
         /// Initialises a new instance of the <see cref="ArgumentTypeException"/> class.

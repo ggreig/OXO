@@ -24,7 +24,7 @@ namespace GavinGreig.OXO
     /// The Program class is public by default, but can be made internal without affecting program functionality.
     /// A class at namespace scope cannot be restricted further.
     /// </remarks>
-    internal class Program
+    internal sealed class Program
     {
         /// <summary>
         /// This is the main entry point of the program. Further information about Main
