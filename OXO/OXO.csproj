@@ -89,7 +89,9 @@
     <Compile Include="State\GameState.cs" />
     <Compile Include="State\Path.cs" />
     <Compile Include="Strategies\AutomaticPlay.cs" />
+    <Compile Include="Players\AutomaticPlayer.cs" />
     <Compile Include="Strategies\GameMode.cs" />
+    <Compile Include="Players\Player.cs" />
     <Compile Include="Validation\ArgumentTypeException.cs" />
     <Compile Include="Validation\ExtensionMethodsType.cs" />
     <Compile Include="Validation\ParameterValidation.cs" />

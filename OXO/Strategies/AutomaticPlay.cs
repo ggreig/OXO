@@ -18,7 +18,7 @@ namespace GavinGreig.OXO.Strategies
     /// <summary>
     /// A concrete strategy implementing a <see cref="GameMode"/>  where the computer plays against itself.
     /// </summary>
-    internal class AutomaticPlay : GameMode
+    internal sealed class AutomaticPlay : GameMode
     {
         /// <summary>
         /// Gets "Player 1" for the game.
