@@ -5,6 +5,7 @@
       <Value>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Team Tools\Static Analysis Tools\FxCop</Value>
     </CollectionProperty>
     <CollectionProperty Name="RecognizedWords">
+      <Value>indices</Value>
       <Value>ux</Value>
     </CollectionProperty>
     <StringProperty Name="MergeSettingsFiles">NoMerge</StringProperty>

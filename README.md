@@ -27,9 +27,7 @@ Incomplete Functionality
 The executables compile, but functionality has not been completed.
 At the time of writing the following requirements are not satisfied:
 
-* Make random moves by each player
 * Offer to run another game at the end of a game
-* Display the result at the end of the game
 
 Incomplete Testing
 ------------------
@@ -54,11 +52,36 @@ not to attempt Authenticode signing on this project.
 
 Icon
 ----
-A production program would also be assigned a dsitinctive icon in a number
+A production program would also be assigned a distinctive icon in a number
 of resolutions. This step was omitted in the interests of time.
 
 Impediments
 -----------
-* First time using GitHub
-* First time using Markdown
-* Actual hours available: ~8 (initial estimate), ~13 (actual)
+* First time using GitHub (minor)
+* First time using Markdown (minor)
+* Actual hours available: with travel, 2 evenings after 8 o'clock, plus what
+I could manage elsewhere. (significant)
+* Decision to take "production ready" literally (medium). Could have dialled
+back on things like the use of code quality tools, paying attention to code
+security (e.g. defaulting to internal rather than public), and signing, but
+these are things it's good to get in place from the start and which I would
+usually aim to do in production.
+
+What could be done better
+-------------------------
+* More testing
+* Use Inversion of Control to separate out decisions about concrete classes 
+from where they're used. This wasn't attempted because of time. Our portability
+work dating back to 2005 used hand-written Factories to achieve this, before
+the easy availability of IOC frameworks, so I don't have good familiarity
+with a single framework to pick and run with. With more time, I would
+look into adopting a framework such as Autofac or Ninject.
+* Separate Views from the Model. It's less natural to think of a command line
+program in these terms, and I fell into that trap in the process of trying
+to get functionality established; but in a production program, with more time,
+it would be worth refactoring to establish that separation. Broadly, I would 
+expect a View to represent each turn (probably with a subview for the actual 
+game state), and other views for other interactions such as the game 
+introduction. Behind the views I would prefer to use ViewModels (MVVM) which
+would be easily drivable for testing, and relatively easy to apply new UI 
+skins to - such as a Windows, mobile or web version.

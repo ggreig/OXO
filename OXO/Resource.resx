@@ -133,4 +133,10 @@
     <value>Noughts and Crosses</value>
     <comment>A text banner giving the name of the program.</comment>
   </data>
+  <data name="ResultDraw" xml:space="preserve">
+    <value>The game was a draw; there was no winner.</value>
+  </data>
+  <data name="ResultWinner" xml:space="preserve">
+    <value>The winner is {0}, who was playing as {1}.</value>
+  </data>
 </root>

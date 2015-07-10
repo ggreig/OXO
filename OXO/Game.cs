@@ -11,6 +11,7 @@ namespace GavinGreig.OXO
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using System.Text;
     using System.Threading;
@@ -105,15 +106,29 @@ namespace GavinGreig.OXO
                     myPlayers[0].TakeTurn(myGameState);
                     DisplayGameBoard();
 
-                    if (myGameState.WinningSymbol == null)
+                    if (!GameIsOver())
                     {
                         myPlayers[1].TakeTurn(myGameState);
                         DisplayGameBoard();
                     }
-                } 
-                while (myGameState.WinningSymbol == null);
+                }
+                while (!GameIsOver());
 
                 // Announce the winner, and ask for another game.
+                if (myGameState.WinningSymbol == null)
+                {
+                    Console.WriteLine(Resource.ResultDraw);
+                }
+                else
+                {
+                    Player theWinner = myPlayers.First(x => x.Symbol == myGameState.WinningSymbol);
+                    string theAnnouncement = string.Format(
+                        CultureInfo.CurrentCulture, 
+                        Resource.ResultWinner,
+                        theWinner.Name,
+                        theWinner.Symbol);
+                    Console.WriteLine(theAnnouncement);
+                }
             } 
             while (UserWishesToContinue());
         }
@@ -161,6 +176,16 @@ namespace GavinGreig.OXO
             // Default implementation stops after one game.
             // TODO: Implement a method here that actually asks the user and returns their preference.
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Determines whether the game is over.
+        /// </summary>
+        /// <returns>The value is true if the game is over, otherwise false.</returns>
+        private bool GameIsOver()
+        {
+            return myGameState.WinningSymbol != null || 
+                   myGameState.EmptyCells.Count < 1;
         }
     }
 }

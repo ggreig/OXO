@@ -44,8 +44,16 @@ namespace GavinGreig.OXO.Players
         /// <param name="myGameState">The current state of the game.</param>
         internal override void TakeTurn(GameState myGameState)
         {
-            // Need a method of randomly choosing a cell from those that are still blank.
-            throw new NotImplementedException();
+            // Pick a random index into the collection of currently empty cells.
+            Random theRandomNumberGenerator = new Random();
+            int theRandomCellIndex = theRandomNumberGenerator.Next(0, myGameState.EmptyCells.Count - 1);
+
+            // Retrieve the row and column indices.
+            int theRowIndex = myGameState.EmptyCells[theRandomCellIndex].Item1;
+            int theColumnIndex = myGameState.EmptyCells[theRandomCellIndex].Item2;
+
+            // Set the state of the cell identified by the indices to this player's symbol.
+            myGameState.Grid[theRowIndex, theColumnIndex].State = Symbol;
         }
     }
 }

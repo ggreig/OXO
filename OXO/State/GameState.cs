@@ -11,6 +11,7 @@ namespace GavinGreig.OXO.State
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -58,35 +59,18 @@ namespace GavinGreig.OXO.State
         internal GameState()
         {
             // Wanted to refactor the multiple nested "for" loops in this class away into a 
-            // single method that would accept a lambda as the action to take inside 
-            // the loops, but had to back out due to lack of time when problems arose 
-            // and reinstate the multiple loops .
+            // single method that would accept a lambda as the action to apply inside the
+            // loops, but had to back out when problems arose, and reinstate the multiple loops.
             for (int i = 0; i < Constant.GridDimension; i++)
             {
                 for (int j = 0; j < Constant.GridDimension; j++)
                 {
-                    Grid[i, j] = new Cell();
+                    Grid[i, j] = new Cell(i, j);
                 }
             }
 
-            myPaths = new List<Path>
-                {
-                    // Horizontal Paths
-                    new Path(Grid[0, 0], Grid[0, 1], Grid[0, 2]),
-                    new Path(Grid[1, 0], Grid[1, 1], Grid[1, 2]),
-                    new Path(Grid[2, 0], Grid[2, 1], Grid[2, 2]),
-
-                    // Vertical Paths
-                    new Path(Grid[0, 0], Grid[1, 0], Grid[2, 0]),
-                    new Path(Grid[0, 1], Grid[1, 1], Grid[2, 1]),
-                    new Path(Grid[0, 2], Grid[1, 2], Grid[2, 2]),
-
-                    // Diagonal Paths
-                    new Path(Grid[0, 0], Grid[1, 1], Grid[2, 2]),
-                    new Path(Grid[2, 0], Grid[1, 1], Grid[0, 2])
-                };
-
-            // Register an event handler for when any Path is completed.
+            // Register an event handler for when any possible winning Path is completed.
+            myPaths = BuildPossibleWinningPaths();
             foreach (Path aPath in myPaths)
             {
                 aPath.PathComplete += GameState_PathComplete;
@@ -115,7 +99,34 @@ namespace GavinGreig.OXO.State
         internal Cell[,] Grid
         {
             get { return myGrid; }
-        } 
+        }
+
+        /// <summary>
+        /// Gets a collection of the currently empty cells.
+        /// </summary>
+        /// <value>
+        /// A collection of the currently empty cells.
+        /// </value>
+        internal ReadOnlyCollection<Tuple<int, int>> EmptyCells
+        {
+            get
+            {
+                List<Tuple<int, int>> theEmptyCells = new List<Tuple<int, int>>();
+
+                for (int i = 0; i < Constant.GridDimension; i++)
+                {
+                    for (int j = 0; j < Constant.GridDimension; j++)
+                    {
+                        if (Grid[i, j].State == CellState.Empty)
+                        {
+                            theEmptyCells.Add(Grid[i, j].GridCoordinates);
+                        }
+                    }
+                }
+
+                return new ReadOnlyCollection<Tuple<int, int>>(theEmptyCells);
+            }
+        }
 
         /// <summary>
         /// Resets the state of the game, so that another game can be played.
@@ -162,6 +173,32 @@ namespace GavinGreig.OXO.State
             Console.Write(HorizontalBar);
             Console.Write(VerticalBar);
             Console.WriteLine(HorizontalBar);
+        }
+
+        /// <summary>
+        /// Builds a collection of the possible winning paths through the noughts and
+        /// crosses grid.
+        /// </summary>
+        /// <returns>The collection of possible winning paths.</returns>
+        private List<Path> BuildPossibleWinningPaths()
+        {
+            List<Path> thePaths = new List<Path>
+                {
+                    // Horizontal Paths
+                    new Path(Grid[0, 0], Grid[0, 1], Grid[0, 2]),
+                    new Path(Grid[1, 0], Grid[1, 1], Grid[1, 2]),
+                    new Path(Grid[2, 0], Grid[2, 1], Grid[2, 2]),
+
+                    // Vertical Paths
+                    new Path(Grid[0, 0], Grid[1, 0], Grid[2, 0]),
+                    new Path(Grid[0, 1], Grid[1, 1], Grid[2, 1]),
+                    new Path(Grid[0, 2], Grid[1, 2], Grid[2, 2]),
+
+                    // Diagonal Paths
+                    new Path(Grid[0, 0], Grid[1, 1], Grid[2, 2]),
+                    new Path(Grid[2, 0], Grid[1, 1], Grid[0, 2])
+                };
+            return thePaths;
         }
 
         /// <summary>

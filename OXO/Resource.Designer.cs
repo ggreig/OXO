@@ -104,5 +104,23 @@ namespace GavinGreig.OXO {
                 return ResourceManager.GetString("ProgramBanner", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The game was a draw; there was no winner..
+        /// </summary>
+        internal static string ResultDraw {
+            get {
+                return ResourceManager.GetString("ResultDraw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The winner is {0}, who was playing as {1}..
+        /// </summary>
+        internal static string ResultWinner {
+            get {
+                return ResourceManager.GetString("ResultWinner", resourceCulture);
+            }
+        }
     }
 }
