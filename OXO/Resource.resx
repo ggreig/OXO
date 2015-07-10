@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DuplicateCellsInPath" xml:space="preserve">
+    <value>Cells in a Path must be unique. {0} and {1} are identical.</value>
+  </data>
+  <data name="EnterToStart" xml:space="preserve">
+    <value>Press the Enter key to begin the game:</value>
+  </data>
   <data name="GameBoardIntroduction" xml:space="preserve">
     <value>Here's the current state of the game board:</value>
   </data>

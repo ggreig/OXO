@@ -86,8 +86,10 @@
     </Compile>
     <Compile Include="State\Cell.cs" />
     <Compile Include="State\CellState.cs" />
+    <Compile Include="State\Constant.cs" />
     <Compile Include="State\GameState.cs" />
     <Compile Include="State\Path.cs" />
+    <Compile Include="State\PathCompleteEventArgs.cs" />
     <Compile Include="Strategies\AutomaticPlay.cs" />
     <Compile Include="Players\AutomaticPlayer.cs" />
     <Compile Include="Strategies\GameMode.cs" />

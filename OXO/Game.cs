@@ -69,26 +69,37 @@ namespace GavinGreig.OXO
         }
 
         /// <summary>
-        /// Displays an introduction to the Game.
-        /// </summary>
-        internal void DisplayGameBoard()
-        {
-            Console.WriteLine(Resource.GameBoardIntroduction);
-            Console.WriteLine();
-            myGameState.Display();
-            Console.WriteLine();
-            Thread.Sleep(OneSecond);
-        }
-
-        /// <summary>
         /// Runs this instance of the Game. Defines the flow of the Game.
         /// </summary>
         internal void Run()
         {
             DisplayGameIntroduction();
             DisplayGameBoard();
+
+            GetPermissionToContinue(Resource.EnterToStart);
+
             myGameMode.GetPlayer1();
             myGameMode.GetPlayer2();
+        }
+
+        /// <summary>
+        /// Displays an introduction to the Game.
+        /// </summary>
+        internal void DisplayGameBoard()
+        {
+            myGameState.Display();
+            Console.WriteLine();
+            Thread.Sleep(OneSecond);
+        }
+
+        /// <summary>
+        /// Requests the user's permission to continue, with the specified prompt.
+        /// </summary>
+        /// <param name="inPrompt">A prompt, which should ask the user for permission to proceed.</param>
+        private static void GetPermissionToContinue(string inPrompt)
+        {
+            Console.WriteLine(inPrompt);
+            Console.ReadLine();
         }
     }
 }

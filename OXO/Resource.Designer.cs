@@ -61,6 +61,24 @@ namespace GavinGreig.OXO {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cells in a Path must be unique. {0} and {1} are identical..
+        /// </summary>
+        internal static string DuplicateCellsInPath {
+            get {
+                return ResourceManager.GetString("DuplicateCellsInPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Press the Enter key to begin the game:.
+        /// </summary>
+        internal static string EnterToStart {
+            get {
+                return ResourceManager.GetString("EnterToStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Here&apos;s the current state of the game board:.
         /// </summary>
         internal static string GameBoardIntroduction {

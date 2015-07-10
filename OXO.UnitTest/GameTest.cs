@@ -51,35 +51,5 @@ namespace GavinGreig.OXO.UnitTest
                 Assert.That(theConsole.Output, Is.EqualTo(theExpectedOutput));
             }
         }
-
-        /// <summary>
-        /// Tests that the game board displays correctly when first initialised.
-        /// </summary>
-        /// <remarks>
-        /// This is testing that the game board can be correctly displayed at the start of play.
-        /// </remarks>
-        [Test]
-        public static void GameBoard_WhenFirstInitialised_DisplaysCorrectly()
-        {
-            using (ConsoleCapture theConsole = new ConsoleCapture())
-            {
-                ////// Arrange
-                ////string theExpectedOutput =
-                ////    "Here's the current state of the game board:\r\n" +
-                ////    "\r\n" +
-                ////    " | | \r\n" +
-                ////    "―|―|―\r\n" +
-                ////    " | | \r\n" +
-                ////    "―|―|―\r\n" +
-                ////    " | | \r\n";
-                ////GameState theGameState = new GameState();
-
-                ////// Act
-                ////Game.DisplayGameBoard(theGameState);
-
-                ////// Assert
-                ////Assert.That(theConsole.Output, Is.EqualTo(theExpectedOutput));
-            }
-        }
     }
 }
