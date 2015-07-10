@@ -100,6 +100,9 @@ namespace GavinGreig.OXO
             // Start playing.
             do
             {
+                // Make sure the game is ready to begin.
+                myGameState.Reset();
+
                 // Play until someone wins.
                 do
                 {
@@ -170,12 +173,18 @@ namespace GavinGreig.OXO
         /// Indicates whether the user wishes to continue playing more games.
         /// </summary>
         /// <returns>A value indicating whether the user wishes to continue playing more games.</returns>
-        /// <exception cref="System.NotImplementedException">Thrown because this method has not yet been implemented.</exception>
         private static bool UserWishesToContinue()
         {
-            // Default implementation stops after one game.
-            // TODO: Implement a method here that actually asks the user and returns their preference.
-            throw new NotImplementedException();
+            Console.WriteLine();
+            Console.WriteLine(Resource.CouldStop);
+            Console.WriteLine(Resource.PressYToContinue);
+            ConsoleKeyInfo theKeyInfo = Console.ReadKey();
+            if (theKeyInfo.KeyChar == 'y')
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>

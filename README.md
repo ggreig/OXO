@@ -22,18 +22,11 @@ Otherwise, this solution should be self-contained, although
 unfortunately it has not been possible to test this on a machine
 with minimal development software installed.
 
-Incomplete Functionality
-------------------------
-The executables compile, but functionality has not been completed.
-At the time of writing the following requirements are not satisfied:
-
-* Offer to run another game at the end of a game
-
 Incomplete Testing
 ------------------
 The existing tests pass, but many more would be desirable. Some real
 test-driven testing (red/green/refactor) occurred, but under time 
-pressure less was done than desirable, with too much left until after
+pressure much less was done than desirable, with too much left until after
 implementation and unfortunately therefore not addressed.
 
 Signing

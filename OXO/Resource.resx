@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CouldStop" xml:space="preserve">
+    <value>We could stop now if you like.</value>
+  </data>
   <data name="DuplicateCellsInPath" xml:space="preserve">
     <value>Cells in a Path must be unique. {0} and {1} are identical.</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="GameIntroduction" xml:space="preserve">
     <value>Two computer players will compete for your amusement.</value>
+  </data>
+  <data name="PressYToContinue" xml:space="preserve">
+    <value>If you want the robots to play another game, press Y.</value>
   </data>
   <data name="ProgramBanner" xml:space="preserve">
     <value>Noughts and Crosses</value>

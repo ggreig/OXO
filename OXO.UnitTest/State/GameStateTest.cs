@@ -73,6 +73,7 @@ namespace GavinGreig.OXO.UnitTest.State
             {
                 // Arrange
                 string theExpectedOutput =
+                    "\r\n" +
                     "Here's the current state of the game board:\r\n" +
                     "\r\n" +
                     " | | \r\n" +

@@ -61,6 +61,15 @@ namespace GavinGreig.OXO {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to We could stop now if you like..
+        /// </summary>
+        internal static string CouldStop {
+            get {
+                return ResourceManager.GetString("CouldStop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cells in a Path must be unique. {0} and {1} are identical..
         /// </summary>
         internal static string DuplicateCellsInPath {
@@ -93,6 +102,15 @@ namespace GavinGreig.OXO {
         internal static string GameIntroduction {
             get {
                 return ResourceManager.GetString("GameIntroduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you want the robots to play another game, press Y..
+        /// </summary>
+        internal static string PressYToContinue {
+            get {
+                return ResourceManager.GetString("PressYToContinue", resourceCulture);
             }
         }
         

@@ -153,6 +153,7 @@ namespace GavinGreig.OXO.State
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "Temporary")]
         internal void Display()
         {
+            Console.WriteLine();
             Console.WriteLine(Resource.GameBoardIntroduction);
             Console.WriteLine();
 
