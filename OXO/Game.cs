@@ -16,6 +16,7 @@ namespace GavinGreig.OXO
     using System.Threading;
     using System.Threading.Tasks;
     using GavinGreig.OXO.Display;
+    using GavinGreig.OXO.Players;
     using GavinGreig.OXO.State;
     using GavinGreig.OXO.Strategies;
 
@@ -38,6 +39,16 @@ namespace GavinGreig.OXO
         /// The current state of the game.
         /// </summary>
         private readonly GameState myGameState;
+
+        /// <summary>
+        /// A collection of players taking part in the game.
+        /// </summary>
+        /// <remarks>
+        /// Although there are only two players in this game, a more
+        /// abstract list-based model could be developed that would allow a rota
+        /// of players taking turns. This approach would work for one to many players.
+        /// </remarks>
+        private List<Player> myPlayers;
 
         /// <summary>
         /// Initialises a new instance of the <see cref="Game"/> class.
@@ -73,13 +84,38 @@ namespace GavinGreig.OXO
         /// </summary>
         internal void Run()
         {
+            // Introduction to game
             DisplayGameIntroduction();
-            DisplayGameBoard();
+            DisplayGameBoard(doPause: false);
 
-            GetPermissionToContinue(Resource.EnterToStart);
+            // Gather information needed to play.
+            GetPermissionToEndPause(Resource.EnterToStart);
+            myPlayers = new List<Player> 
+                { 
+                    myGameMode.GetPlayer1(), 
+                    myGameMode.GetPlayer2()
+                };
 
-            myGameMode.GetPlayer1();
-            myGameMode.GetPlayer2();
+            // Start playing.
+            do
+            {
+                // Play until someone wins.
+                do
+                {
+                    myPlayers[0].TakeTurn(myGameState);
+                    DisplayGameBoard();
+
+                    if (myGameState.WinningSymbol == null)
+                    {
+                        myPlayers[1].TakeTurn(myGameState);
+                        DisplayGameBoard();
+                    }
+                } 
+                while (myGameState.WinningSymbol == null);
+
+                // Announce the winner, and ask for another game.
+            } 
+            while (UserWishesToContinue());
         }
 
         /// <summary>
@@ -87,19 +123,44 @@ namespace GavinGreig.OXO
         /// </summary>
         internal void DisplayGameBoard()
         {
-            myGameState.Display();
-            Console.WriteLine();
-            Thread.Sleep(OneSecond);
+            DisplayGameBoard(doPause: true);
         }
 
         /// <summary>
-        /// Requests the user's permission to continue, with the specified prompt.
+        /// Displays an introduction to the Game.
+        /// </summary>
+        /// <param name="doPause">A value indicating whether a one second pause is required.</param>
+        internal void DisplayGameBoard(bool doPause)
+        {
+            if (doPause)
+            {
+                Thread.Sleep(OneSecond);
+            }
+
+            myGameState.Display();
+            Console.WriteLine();
+        }
+
+        /// <summary>
+        /// Requests the user's permission to end pause, with the specified prompt.
         /// </summary>
         /// <param name="inPrompt">A prompt, which should ask the user for permission to proceed.</param>
-        private static void GetPermissionToContinue(string inPrompt)
+        private static void GetPermissionToEndPause(string inPrompt)
         {
             Console.WriteLine(inPrompt);
             Console.ReadLine();
+        }
+
+        /// <summary>
+        /// Indicates whether the user wishes to continue playing more games.
+        /// </summary>
+        /// <returns>A value indicating whether the user wishes to continue playing more games.</returns>
+        /// <exception cref="System.NotImplementedException">Thrown because this method has not yet been implemented.</exception>
+        private static bool UserWishesToContinue()
+        {
+            // Default implementation stops after one game.
+            // TODO: Implement a method here that actually asks the user and returns their preference.
+            throw new NotImplementedException();
         }
     }
 }

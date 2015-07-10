@@ -16,6 +16,7 @@ namespace GavinGreig.OXO.Strategies
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using GavinGreig.OXO.Players;
 
     /// <summary>
     ///  A base class allowing the implementation of different game
@@ -27,11 +28,13 @@ namespace GavinGreig.OXO.Strategies
         /// <summary>
         /// Gets "Player 1" for the game.
         /// </summary>
-        internal abstract void GetPlayer1();
+        /// <returns>Player 1 for the game.</returns>
+        internal abstract Player GetPlayer1();
 
         /// <summary>
         /// Gets "Player 2" for the game.
         /// </summary>
-        internal abstract void GetPlayer2();
+        /// <returns>Player 2 for the game.</returns>
+        internal abstract Player GetPlayer2();
     }
 }

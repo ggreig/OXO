@@ -14,6 +14,8 @@ namespace GavinGreig.OXO.Strategies
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using GavinGreig.OXO.Players;
+    using GavinGreig.OXO.State;
 
     /// <summary>
     /// A concrete strategy implementing a <see cref="GameMode"/>  where the computer plays against itself.
@@ -23,15 +25,19 @@ namespace GavinGreig.OXO.Strategies
         /// <summary>
         /// Gets "Player 1" for the game.
         /// </summary>
-        internal override void GetPlayer1()
+        /// <returns>Player 1 for the game.</returns>
+        internal override Player GetPlayer1()
         {
+            return new AutomaticPlayer("Player 1", CellState.X);
         }
 
         /// <summary>
         /// Gets "Player 2" for the game.
         /// </summary>
-        internal override void GetPlayer2()
+        /// <returns>Player 2 for the game.</returns>
+        internal override Player GetPlayer2()
         {
+            return new AutomaticPlayer("Player 2", CellState.O);
         }
     }
 }

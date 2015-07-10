@@ -22,6 +22,22 @@ Otherwise, this solution should be self-contained, although
 unfortunately it has not been possible to test this on a machine
 with minimal development software installed.
 
+Incomplete Functionality
+------------------------
+The executables compile, but functionality has not been completed.
+At the time of writing the following requirements are not satisfied:
+
+* Make random moves by each player
+* Offer to run another game at the end of a game
+* Display the result at the end of the game
+
+Incomplete Testing
+------------------
+The existing tests pass, but many more would be desirable. Some real
+test-driven testing (red/green/refactor) occurred, but under time 
+pressure less was done than desirable, with too much left until after
+implementation and unfortunately therefore not addressed.
+
 Signing
 -------
 The projects in this solution are strong-name signed for added security.
@@ -45,4 +61,4 @@ Impediments
 -----------
 * First time using GitHub
 * First time using Markdown
-* Actual hours available: 8 (initial estimate)
+* Actual hours available: ~8 (initial estimate), ~13 (actual)

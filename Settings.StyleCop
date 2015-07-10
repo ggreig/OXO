@@ -63,6 +63,7 @@
         <CollectionProperty Name="Hungarian">
           <Value>a</Value>
           <Value>an</Value>
+          <Value>do</Value>
           <Value>in</Value>
           <Value>io</Value>
           <Value>my</Value>
